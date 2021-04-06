@@ -2,7 +2,7 @@ const { getDraftHistory } = require('./getDraftHistory');
 const { insertDrafts, insertPlayers } = require('./insertDraftData');
 
 const populate = async (startYear, endYear) => {
-   const draftHistoryData = await getDraftHistory(2020);
+   const draftHistoryData = await getDraftHistory(startYear, endYear);
 
    console.log(`Finished parsing draft history data. ${draftHistoryData.length} draft years parsed.`)
 
