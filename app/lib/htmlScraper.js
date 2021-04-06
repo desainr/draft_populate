@@ -9,6 +9,8 @@ const {
 } = require('./pfrUtils');
 
 const scrapeDraftPageData = (html, year) => {
+  console.log(`Parsing draft data for ${year}...`);
+
   const $ = cheerio.load(html);
 
   const draftTable = $(PFR_MAIN_SELECTORS.draftTableId);

@@ -19,6 +19,8 @@ const getDraftHistory = async (startYear, endYear = 2020) => {
     throw new Error('Year cannot be in the future');
   }
 
+  console.log(`Beginning gathering draft data between ${startYear} and ${endYear}`);
+
   const draftDataPromises = [];
 
   for (let year = startYear; year <= endYear; year++) {

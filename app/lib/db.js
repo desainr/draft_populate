@@ -1,7 +1,7 @@
 const pg = require('pg-promise')({});
-const config = require('../../localConfig.json');
+const config = require('../../sqlConfig.json');
 
-const client = pg(config);
+const client = pg(config.connectionString);
 
 module.exports = {
   client,
