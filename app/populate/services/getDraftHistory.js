@@ -1,5 +1,5 @@
 const request = require('request-promise');
-const { scrapeDraftPageData } = require('../../lib/htmlScraper');
+const { scrapeDraftPageData } = require('@desainr/pfrhtmlscraper');
 
 const createPfrUrl = (year) => {
   return `https://www.pro-football-reference.com/years/${year}/draft.htm`
