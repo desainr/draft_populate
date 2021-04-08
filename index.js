@@ -1,3 +1,8 @@
-const populate = require('./app/populate')
+const {populateDraftsAndPlayers, populateCombines} = require('./app/populate')
 
-populate(2002, 2020);
+const runPopulate = async () => {
+  // await populateDraftsAndPlayers(2000, 2020);
+  await populateCombines(2000, 2020)
+};
+
+runPopulate();

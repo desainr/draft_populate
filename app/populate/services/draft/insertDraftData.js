@@ -1,4 +1,4 @@
-const { pg, client } = require('../../lib/db');
+const { pg, client } = require('../../../lib/db');
 
 const insertPlayers = async (players) => {
   console.log(`Inserting ${players.length} new players...`);

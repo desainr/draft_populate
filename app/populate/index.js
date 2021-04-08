@@ -1,1 +1,6 @@
-module.exports = require('./services/populate');
+const {populateDraftsAndPlayers, populateCombines} = require('./services/populate');
+
+module.exports = {
+  populateDraftsAndPlayers,
+  populateCombines,
+}

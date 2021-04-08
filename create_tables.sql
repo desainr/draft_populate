@@ -73,3 +73,16 @@ CREATE TABLE draft_picks (
     ROUND int NOT NULL,
     YEAR int NOT NULL
 );
+
+CREATE TABLE combine_stats (
+    PLAYER_ID varchar(8) NOT NULL REFERENCES players(id),
+    HEIGHT float,
+    WEIGHT float,
+    WONDERLIC int,
+    FORTY_TIME float,
+    BENCH_PRESS int,
+    VERT_LEAP float,
+    BROAD_JUMP int,
+    SHUTTLE FLOAT,
+    THREE_CONE FLOAT
+)

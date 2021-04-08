@@ -1,7 +1,8 @@
-const { getDraftHistory } = require('./getDraftHistory');
-const { insertDrafts, insertPlayers } = require('./insertDraftData');
+const { getDraftHistory } = require('./draft/getDraftHistory');
+const { insertDrafts, insertPlayers } = require('./draft/insertDraftData');
+const { generateCombineDataByYear } = require('./combine/generateCombineData');
 
-const populate = async (startYear, endYear) => {
+const populateDraftsAndPlayers = async (startYear, endYear) => {
    const draftHistoryData = await getDraftHistory(startYear, endYear);
 
    console.log(`Finished parsing draft history data. ${draftHistoryData.length} draft years parsed.`)
@@ -14,4 +15,13 @@ const populate = async (startYear, endYear) => {
    console.log(`Finished writing new players and drafts to database.`);
 }
 
-module.exports = populate;
+const populateCombines = async (startYear, endYear) => {
+  for (let year = startYear; year <= endYear; year++) {
+    await generateCombineDataByYear(year)
+  }
+}
+
+module.exports = {
+  populateCombines,
+  populateDraftsAndPlayers,
+}
