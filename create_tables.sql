@@ -63,7 +63,8 @@ CREATE TABLE players (
     TACKLES integer,
     DEF_INTS integer,
     SACKS integer,
-    LAST_ACTIVE integer
+    LAST_ACTIVE integer,
+    HOF bool default false,
 );
 
 CREATE TABLE draft_picks (

@@ -6,7 +6,7 @@ const insertPlayers = async (players) => {
   const columnSet = new pg.helpers.ColumnSet([
     'id', 'team_id', 'player', 'age', 'games', 'pass_cmp', 'pass_att', 'pass_tds',
     'pass_ints', 'rush_att', 'rush_yds', 'rush_tds', 'recs', 'rec_yds', 'rec_tds', 'tackles', 'def_ints',
-    'sacks', 'pass_yds', 'position', 'last_active'], {table: 'players'})
+    'sacks', 'pass_yds', 'position', 'last_active', 'college', 'hof'], {table: 'players'})
 
   const query = () => pg.helpers.insert(players, columnSet);
 
