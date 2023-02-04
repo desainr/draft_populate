@@ -28,9 +28,11 @@ const generateCombineDataByYear = async (year) => {
 
   const players = await getPlayersByDraftYear(year)
 
-  const combineObjs = scrapeCombineDataMatchPlayers(html, players);
+  const {matchingPlayers, unmatchedPlayers} = scrapeCombineDataMatchPlayers(html, players);
+  console.log(`Matched ${matchingPlayers.length}/${matchingPlayers.length + unmatchedPlayers.length} players`);
+  console.log('Unmatched\n' + JSON.stringify(unmatchedPlayers));
 
-  await insertCombineStats(combineObjs)
+  await insertCombineStats(matchingPlayers)
 }
 
 module.exports = {

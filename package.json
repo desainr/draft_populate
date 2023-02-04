@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/desainr/draft_populate#readme",
   "dependencies": {
-    "@desainr/htmlscraper": "^1.0.8",
+    "@desainr/htmlscraper": "git+https://github.com/desainr/pfrhtmlscraper.git",
     "cheerio": "^1.0.0-rc.5",
     "pg": "^8.5.1",
     "pg-promise": "^10.10.1",

@@ -15,7 +15,7 @@ const populateDraftsAndPlayers = async (startYear, endYear) => {
    console.log(`Finished writing new players and drafts to database.`);
 }
 
-const populateCombines = async (startYear, endYear) => {
+const populateCombines = async (startYear, endYear = startYear) => {
   for (let year = startYear; year <= endYear; year++) {
     await generateCombineDataByYear(year)
   }
